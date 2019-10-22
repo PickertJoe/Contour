@@ -13,10 +13,15 @@
  @import 'bootstrap';
  @import 'rfs/scss';
 
-.title{
-  @include font-size(4rem);
-}
+
 
 .img-fluid{
   transform: rotate(180deg);
+}
+
+.home-banner{
+ background-color: blue;
+ text-align: center;
+ color: white;
+ font-size: 2.5em;
 }
