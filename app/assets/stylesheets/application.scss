@@ -15,13 +15,24 @@
 
 
 
+.boxed{
+  background-color: gray;
+  box-sizing: content-box;
+}
+
+.home-banner{
+ background-image: url(Contour.jpg);
+ color: white;
+ font-size: 2.5em;
+ text-align: center;
+ text-shadow: 2px 2px black;
+}
+
 .img-fluid{
   transform: rotate(180deg);
 }
 
-.home-banner{
- background-color: blue;
- text-align: center;
- color: white;
- font-size: 2.5em;
+.scrim{
+  background-color: rgba(0, 0, 0, 0.6);
 }
+
