@@ -17,33 +17,30 @@
       #navbarText.collapse.navbar-collapse
         %ul.navbar-nav.mr-auto
           %li.nav-item.active
-            %a.nav-link{:href => "#"}
+            %a.nav-link{:href => root_path}
               Home
               %span.sr-only (current)
           %li.nav-item
-            %a.nav-link=link_to "FAQ"
+            %a.nav-link{:href => "#"} FAQ
           %li.nav-item
-            %a.nav-link=link_to "Create"
-        %ul.navbar-nav.ml-auto
+            %a.nav-link{:href => "#"} Create
         - if user_signed_in?
-          Logged in as
-          %strong= current_user.email
-          %li.nav-item
-            %a.nav-link=link_to "View Profile", user_path(current_user)
-           %li.nav-item
-            %a.nav-link=link_to "See GPX Files"
-          %li.nav-item
-            %a.nav-link=link_to "Logout", destroy_user_session_path, :method => :DELETE
+          %ul.navbar-nav.ml-auto
+            Logged in as
+            %strong= current_user.email
+            %li.nav-item
+              %a.nav-link{:href => user_path(current_user)} View Profile
+            %li.nav-item
+              %a.nav-link{:href => "#"} See GPX Files
+            %li.nav-item
+              %a.nav-link{:href => destroy_user_session_path, :method => :DELETE} Logout
         - else
-          %li.nav-item
-            %a.nav-link=link_to "Create Account", new_user_registration_path
-          %li.nav-item
-            %a.nav-link=link_to "Login", new_user_session_path
+          %ul.navbar-nav.ml-auto
+            %li.nav-item
+              %a.nav-link{:href => new_user_registration_path} Create Account
+            %li.nav-item
+              %a.nav-link{:href => new_user_session_path} Login
 
 
-    %p.notice
-      =notice
-    %p.alert
-      =alert
 
     = yield
