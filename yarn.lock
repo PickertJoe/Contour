@@ -5936,6 +5936,13 @@ retry@^0.12.0:
   resolved "https://registry.yarnpkg.com/retry/-/retry-0.12.0.tgz#1b42a6266a21f07421d1b0b54b7dc167b01c013b"
   integrity sha1-G0KmJmoh8HQh0bC1S33BZ7AcATs=
 
+rfs@^9.0.1:
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/rfs/-/rfs-9.0.1.tgz#ad5ef4383ae3c5695328630274add58df587eab3"
+  integrity sha512-bDk9DvyO+VXz2eoF+9lLuHS5ypCMuMs/8iZILVYDUEYGGt+1W+fbn3W/FimcT1cvVDBCwfPgyGEfBauhf/X7Tw==
+  dependencies:
+    postcss-value-parser "^4.0.2"
+
 rgb-regex@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/rgb-regex/-/rgb-regex-1.0.1.tgz#c0e0d6882df0e23be254a475e8edd41915feaeb1"
