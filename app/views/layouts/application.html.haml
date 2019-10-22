@@ -21,12 +21,25 @@
               Home
               %span.sr-only (current)
           %li.nav-item
-            %a.nav-link{:href => "#"} FAQ
+            %a.nav-link=link_to "FAQ"
           %li.nav-item
-            %a.nav-link{:href => "#"} Create
+            %a.nav-link=link_to "Create"
         %ul.navbar-nav.ml-auto
+        - if user_signed_in?
+          Logged in as
+          %strong= current_user.email
           %li.nav-item
-            %a.nav-link{:href => "#"} Sign in
+            %a.nav-link=link_to "View Profile", user_path(current_user)
+           %li.nav-item
+            %a.nav-link=link_to "See GPX Files"
+          %li.nav-item
+            %a.nav-link=link_to "Logout", destroy_user_session_path, :method => :DELETE
+        - else
+          %li.nav-item
+            %a.nav-link=link_to "Create Account", new_user_registration_path
+          %li.nav-item
+            %a.nav-link=link_to "Login", new_user_session_path
+
 
     %p.notice
       =notice
