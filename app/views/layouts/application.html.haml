@@ -10,14 +10,23 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-      .navbar-link-item=link_to "Contour", root_path
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      %a.navbar-brand{:href => "#"} Contour
       %button.navbar-toggler{"aria-controls" => "navbarText", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarText", "data-toggle" => "collapse", :type => "button"}
         %span.navbar-toggler-icon
       #navbarText.collapse.navbar-collapse
-        .nav-item-link=link_to "FAQ"#, faqs_path
-        .nav-item-link=link_to "Create"
-      %span.navbar-text
+        %ul.navbar-nav.mr-auto
+          %li.nav-item.active
+            %a.nav-link{:href => "#"}
+              Home
+              %span.sr-only (current)
+          %li.nav-item
+            %a.nav-link{:href => "#"} FAQ
+          %li.nav-item
+            %a.nav-link{:href => "#"} Create
+        %ul.navbar-nav.ml-auto
+          %li.nav-item
+            %a.nav-link{:href => "#"} Sign in
 
 
 
