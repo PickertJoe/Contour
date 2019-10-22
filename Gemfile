@@ -61,3 +61,6 @@ gem 'jquery-rails'
 
 # Adding HAML
 gem 'haml-rails'
+
+# Adding devise for user authentication
+gem 'devise'
