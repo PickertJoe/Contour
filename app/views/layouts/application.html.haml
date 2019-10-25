@@ -17,29 +17,25 @@
       #navbarText.collapse.navbar-collapse
         %ul.navbar-nav.mr-auto
           %li.nav-item.active
-            %a.nav-link{:href => root_path}
-              Home
-              %span.sr-only (current)
+            .nav-link=link_to "Home", root_path
           %li.nav-item
-            %a.nav-link{:href => pages_faq_path} FAQ
+            .nav-link=link_to "FAQ", pages_faq_path
           %li.nav-item
-            %a.nav-link{:href => "#"} Create
+            .nav-link=link_to "Create"
         - if user_signed_in?
           %ul.navbar-nav.ml-auto
-            Logged in as
-            %strong= current_user.email
             %li.nav-item
-              %a.nav-link{:href => user_path(current_user)} View Profile
+              .nav-link=link_to "View Profile", user_session_path(current_user)
             %li.nav-item
-              %a.nav-link{:href => "#"} See GPX Files
+              .nav-link=link_to "View files"
             %li.nav-item
-              %a.nav-link{:href => destroy_user_session_path, :method => :DELETE} Logout
+              .nav-link=link_to "Logout", destroy_user_session_path, :method => :delete
         - else
           %ul.navbar-nav.ml-auto
             %li.nav-item
-              %a.nav-link{:href => new_user_registration_path} Create Account
+              .nav-link=link_to "Create Account", new_user_registration_path
             %li.nav-item
-              %a.nav-link{:href => new_user_session_path} Login
+              .nav-link=link_to "Login", new_user_session_path
 
     .conatiner
       = yield
