@@ -8,6 +8,7 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag 'Contour.jpg'
 
   %body
     %nav.navbar.navbar-expand-lg.navbar-light.bg-dark
@@ -33,7 +34,7 @@
         - else
           %ul.navbar-nav.ml-auto
             %li.nav-item
-              .nav-link=link_to "Create Account", new_user_registration_path
+              .nav-link=link_to "Register Account", new_user_registration_path
             %li.nav-item
               .nav-link=link_to "Login", new_user_session_path
 
