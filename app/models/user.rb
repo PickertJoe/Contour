@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :gpx
-  has_many :elevation,  through: :gpx
-  has_many :lat_long,  through: :gpx
+  has_many :gpxes
+  has_many :elevations,  through: :gpx
+  has_many :topos,  through: :gpx
 end
