@@ -1,5 +1,5 @@
 class Topo < ApplicationRecord
-  has_one_attached :file
+  has_one_attached :image
   belongs_to :gpx
 
   validates_presence_of :file
