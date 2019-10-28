@@ -1,0 +1,61 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+*/
+ @import 'bootstrap';
+ @import 'rfs/scss';
+
+a:link{
+  color: black !important;
+}
+
+body{
+  background-color: #333333;
+}
+
+.boxed{
+  background-color: gray;
+  box-sizing: content-box;
+}
+
+.btn-light{
+  font-size: 2.5em;
+  width: block;
+}
+
+.home-banner{
+ background-image: asset_url(Contour.jpg);
+ color: white;
+ font-size: 2.5em;
+ text-align: center;
+ text-shadow: 2px 2px black;
+}
+
+img{
+  border: 1px solid #000000;
+}
+
+nav .navbar-nav li a{
+  color: white !important;
+  //font-family: papyrus;
+  font-size: 1.4em;
+  }
+
+nav .navbar-brand{
+  color: white !important;
+  //font-family: papyrus;
+  font-size: 2em;
+}
+
+.scrim{
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
