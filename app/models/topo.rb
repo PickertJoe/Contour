@@ -1,0 +1,2 @@
+class Topo < ApplicationRecord
+end
