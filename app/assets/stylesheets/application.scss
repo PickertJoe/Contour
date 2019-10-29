@@ -21,11 +21,6 @@ body{
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), asset_url('Contour.jpg');
 }
 
-.boxed{
-  background-color: gray;
-  box-sizing: content-box;
-}
-
 .btn-light{
   font-size: 2.5em;
   width: block;
@@ -36,7 +31,6 @@ body{
 }
 
 .home-banner{
-
  color: white;
  font-size: 2.5em;
  text-align: center;
@@ -47,14 +41,19 @@ img{
   border: 1px solid #000000;
 }
 
+nav{
+  background: rgba(255,255,255,0.7);
+}
+
+
 nav .navbar-nav li a{
-  color: white !important;
+  color: black !important;
   //font-family: papyrus;
   font-size: 1.4em;
   }
 
 nav .navbar-brand{
-  color: white !important;
+  color: black !important;
   //font-family: papyrus;
   font-size: 2em;
 }
