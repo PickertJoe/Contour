@@ -1,10 +1,14 @@
-.container
-  %h3= @user.email
-  %h3 Member since
-  %h3= @user.created_at
-  =link_to " Upload New GPX", new_user_gpx_path(current_user)
-  %br
-  =link_to "Browse your files", user_gpxes_path(current_user)
-- if current_user.admin?
-  =link_to "Admin Dashboard", trestle_path
+.container-fluid
+  .row
+    .col-3
+    .col-6.text-background
+      %h3= @user.email
+      %h3 Member since
+      %h3= @user.created_at
+      =link_to " Upload New GPX", new_user_gpx_path(current_user)
+      %br
+      =link_to "Browse your files", user_gpxes_path(current_user)
+      - if current_user.admin?
+        =link_to "Admin Dashboard", trestle_path
+    .col-3
 
