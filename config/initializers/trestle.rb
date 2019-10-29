@@ -5,6 +5,18 @@ Trestle.configure do |config|
   #
   config.site_title = "Contour"
 
+  # Config settings for Devise authentication
+  Trestle.configure do |config|
+  # Optional, but it is always nice to give folks the option of
+  # logging out:
+    config.hook("view.header") do
+      render "admin/header"
+    end
+  # ...
+  end
+  require 'trestle-devise/controller_methods'
+  Trestle::ApplicationController.send(:include, Trestle::Auth::ControllerMethods)
+
   # Specify a custom image to be used in place of the site title for mobile and
   # expanded/desktop navigation. These images should be placed within your
   # asset paths, e.g. app/assets/images.
