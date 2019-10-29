@@ -31,8 +31,12 @@ body{
   width: block;
 }
 
+.faq{
+  color: white;
+}
+
 .home-banner{
- background-image: asset_url(Contour.jpg);
+ background-image: asset_url('Contour.jpg');
  color: white;
  font-size: 2.5em;
  text-align: center;
