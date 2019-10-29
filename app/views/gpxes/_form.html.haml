@@ -3,9 +3,9 @@
   = form.text_field :name
   %br
   = form.label :Activity_Type
-  = form.collection_radio_buttons :activity, Gpx.activities, :first, :first
+  = form.select :activity, options_for_select(Gpx.activities.keys.map { |activity| [activity.humanize, activity]})
   %br
-  = form.file_field :file, direct_upload: true
+  = form.file_field :file
   %br
   %br
   = form.submit

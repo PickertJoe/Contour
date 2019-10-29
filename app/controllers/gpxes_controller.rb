@@ -1,20 +1,20 @@
 class GpxesController < ApplicationController
   before_action :set_user, only: [:index, :new, :create]
-  before action :set_gpx, only: [:show, :edit, :update, :destroy]
+  before_action :set_gpx, only: [:show, :edit, :update, :destroy]
 
   def index
-    @gpxes = @user.gpx
+    @gpxes = @user.gpxes
   end
 
   def new
-    @gpx = @user.gpx.build
+    @gpx = @user.gpxes.build
   end
 
   def edit
   end
 
   def create
-    @gpx = @user.gpx.build(gpx_params)
+    @gpx = @user.gpxes.build(gpx_params)
 
     respond_to do |format|
       if @gpx.save
@@ -37,6 +37,7 @@ class GpxesController < ApplicationController
       else
         format.html {render :edit}
       end
+    end
   end
 
   def destroy
