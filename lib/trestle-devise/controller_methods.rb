@@ -5,13 +5,13 @@ module Trestle
 
       included do
         before_action :authenticate_user!
-        before_action :require_president!
+        before_action :require_admin!
       end
 
       protected
 
-      def require_president!
-        redirect_to root_url, alert: "Only the president is authorized to access this area" unless current_user.roles?(:potus)
+      def require_admin!
+        redirect_to root_url, alert: "Only administrators is authorized to access this area" unless current_user.admin?
       end
     end
   end
