@@ -1,21 +1,20 @@
-%body
-  .container-fluid
-    .row.no-gutters
-      .col
-        =image_tag("Green.jpg", class: 'img-fluid')
-      .col
-        =image_tag("Gray.jpg", class: 'img-fluid')
-      .col
-        =image_tag("Stream.jpg", class: 'img-fluid')
-    .row.home-banner.no-gutters
-      .col.scrim
-        Your favorite adventures, seen in a whole new way.
-    .row.no-gutters
-      .col
-        =image_tag("Topo.png", class: 'img-fluid')
-      .col
-        =image_tag("Plot.png", class: 'img-fluid')
-    .row-no-gutters
-      .col.text-center
-        %button.btn.btn-light.btn-lg{:type => "button", :href => ""} Let's create!
+.container-fluid
+  .row.no-gutters
+    .col
+      =image_tag("Green.jpg", class: 'img-fluid')
+    .col
+      =image_tag("Gray.jpg", class: 'img-fluid')
+    .col
+      =image_tag("Stream.jpg", class: 'img-fluid')
+  .row.home-banner.no-gutters
+    .col
+      Your favorite adventures, seen in a whole new way.
+  .row.no-gutters
+    .col-fluid
+      =image_tag("Topo.png", class: 'img-fluid')
+    .col
+      =image_tag("Plot.png", class: 'img-fluid')
+  .row-no-gutters
+    .col.text-center
+      %button.btn.btn-light.btn-lg{:type => "button", :href => ""} Let's create!
 
