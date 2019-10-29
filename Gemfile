@@ -64,3 +64,6 @@ gem 'devise'
 
 # Adding trestle for admin functionality
 gem 'trestle'
+
+# Adding validations gem for ActiveStorage
+gem 'active_storage_validations'

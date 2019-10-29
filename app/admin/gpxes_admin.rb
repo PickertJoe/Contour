@@ -5,11 +5,16 @@ Trestle.resource(:gpxes) do
 
   # Customize the table columns shown on the index view.
   #
-  # table do
-  #   column :name
-  #   column :created_at, align: :center
-  #   actions
-  # end
+  table do
+    column :id
+    column :name
+    column :activity
+    column :user_id
+    column :created_at, align: :center
+    column :updated_at, align: :center
+    column :file
+    actions
+  end
 
  # Customize the form fields shown on the new/edit views.
 
@@ -21,7 +26,7 @@ Trestle.resource(:gpxes) do
     end
     select :user_id, User.all, include_blank: "--Select User--"
     gpx_activity = Gpx.activities.keys.map { |activity| [activity.humanize, activity]}
-    select :activity, gpx_activity
+    select :activity, gpx_activity, include_blank: "--Select Activity--"
     file_field :file
 
   end
