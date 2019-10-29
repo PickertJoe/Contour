@@ -1,4 +1,4 @@
-class Topo < ApplicationRecord
+class TopographicMap < ApplicationRecord
   has_one_attached :image
   belongs_to :gpx
 
@@ -6,5 +6,5 @@ class Topo < ApplicationRecord
   validates_presence_of :chart_title
   validates_presence_of :gpx_id
 
-  enum size: ['12"x12"', '24"x24"', '36"x36"']
+  enum size: [:small, :medium, :large]
 end

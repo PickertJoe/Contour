@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :gpxes
-  has_many :elevations,  through: :gpx
-  has_many :topos,  through: :gpx
+  has_many :elevationgraphs,  through: :gpx
+  has_many :topographicmaps,  through: :gpx
 end

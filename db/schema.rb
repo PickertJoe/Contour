@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_28_163139) do
+ActiveRecord::Schema.define(version: 2019_10_29_164841) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_10_28_163139) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "elevations", force: :cascade do |t|
+  create_table "elevationgraphs", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "gpx_id"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2019_10_28_163139) do
     t.integer "user_id"
   end
 
-  create_table "topos", force: :cascade do |t|
+  create_table "topographicmaps", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "gpx_id"
