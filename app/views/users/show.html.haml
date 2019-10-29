@@ -5,6 +5,6 @@
   =link_to " Upload New GPX", new_user_gpx_path(current_user)
   %br
   =link_to "Browse your files", user_gpxes_path(current_user)
-  - if current_user.admin?
+- if current_user.admin?
   =link_to "Admin Dashboard", trestle_path
 
