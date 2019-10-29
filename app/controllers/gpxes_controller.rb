@@ -16,20 +16,27 @@ class GpxesController < ApplicationController
   def create
     @gpx = @user.gpx.build(gpx_params)
 
-    if @gpx.save
-      redirect_to user_gpxes_path
-    else
-      redirect_to new_user_gpx_path
+    respond_to do |format|
+      if @gpx.save
+        format.html {redirect_to user_gpxes_path(current_user), notice: "Gpx file was successfully uploaded"}
+        # How to provide a JSON response?
+      else
+        format.html {render :new}
+        # Placeholder for future JSON response
+      end
     end
   end
 
   def update
     @gpx.update(gpx_params)
-    if @gpx.save
-      redirect_to user_gpxes_path(current_user)
-    else
-      redirect_to edit_gpx_path
-    end
+
+    respond_to do |format|
+      if @gpx.save
+        format.html {redirect_to user_gpxes_path(current_user), notice: "Gpx file was successfully updated"}
+        # Placeholder for future JSON response
+      else
+        format.html {render :edit}
+      end
   end
 
   def destroy
