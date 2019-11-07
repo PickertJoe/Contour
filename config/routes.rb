@@ -5,10 +5,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, shallow:true do
     resources :gpxes do
-      resources :elevationgraphs
-      resources :topographicmaps
+      resources :elevation_graphs
+      resources :topographic_maps
     end
   end
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
