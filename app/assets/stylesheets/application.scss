@@ -18,12 +18,7 @@ a:link{
 }
 
 body{
-  background-color: #333333;
-}
-
-.boxed{
-  background-color: gray;
-  box-sizing: content-box;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), asset_url('Contour.jpg');
 }
 
 .btn-light{
@@ -31,12 +26,17 @@ body{
   width: block;
 }
 
+.container{
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
 .faq{
   color: white;
 }
 
 .home-banner{
- background-image: asset_url('Contour.jpg');
  color: white;
  font-size: 2.5em;
  text-align: center;
@@ -47,19 +47,22 @@ img{
   border: 1px solid #000000;
 }
 
+nav{
+  background: rgba(255,255,255,0.7);
+}
+
 nav .navbar-nav li a{
-  color: white !important;
-  //font-family: papyrus;
+  color: black !important;
   font-size: 1.4em;
   }
 
 nav .navbar-brand{
-  color: white !important;
-  //font-family: papyrus;
+  color: black !important;
   font-size: 2em;
 }
 
-.scrim{
-  background-color: rgba(0, 0, 0, 0.4);
+.text-background{
+  background: rgba(255,255,255,0.7);
 }
+
 

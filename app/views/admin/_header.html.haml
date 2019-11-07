@@ -1,0 +1,6 @@
+%p{style: 'pt-2'}
+  = link_to destroy_session_path(:user), :method => :delete do
+    %i.fa.fa-sign-out
+    Logout
+%p
+  = link_to "Homepage", root_path
