@@ -1,11 +1,11 @@
-= form_with model: [@user, @gpx] do |form|
-  = form.label :File_Name
-  = form.text_field :name
+= form_with model: [@user, @gpx] do |f|
+  = f.label :name, "File Name"
+  = f.text_field :name
   %br
-  = form.label :Activity_Type
-  = form.select :activity, options_for_select(Gpx.activities.keys.map { |activity| [activity.humanize, activity]})
+  = f.label :activity, "Activity Type"
+  = f.select :activity, options_for_select(Gpx.activities.keys.map { |activity| [activity.humanize, activity]})
   %br
-  = form.file_field :file
+  = f.file_field :file
   %br
   %br
-  = form.submit
+  = f.submit

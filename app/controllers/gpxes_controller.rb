@@ -1,5 +1,5 @@
 class GpxesController < ApplicationController
-  before_action :set_user, only: [:index, :new, :create]
+  before_action :current_user, only: [:index, :new, :create]
   before_action :set_gpx, only: [:show, :edit, :update, :destroy]
 
   def index
