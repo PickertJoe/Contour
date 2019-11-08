@@ -23,18 +23,44 @@ class ElevationGraphsController < ApplicationController
         format.html { render :new }
       end
     end
+  end
 
+  def show
+    Daru::View.plotting_library = :highcharts
+    @data = @elevationgraph.parse
+    @opts = @elevationgraph.options
+  end
 
-    private
-      def elevation_params
-        params.require(:elevationgraph).permit(:chart_title, :x_title, :y_title, :gpx_id, :size, :data)
+  def edit
+  end
+
+  def update
+    respond_to do |format|
+      if @elevationgraph.update(elevation_params)
+        format.html { redirect_to @elevationgraph }
+      else
+        flash.now[:alert] = "Could not create elevation profile. Please check input."
+        format.html { render :edit }
       end
+    end
+  end
 
-      def set_gpx
-        @gpx = Gpx.find(params[:gpx_id])
-      end
+  def destroy
+    @elevationgraph.destroy
+    redirect_to gpx_elevationgraphs_path(@elevationgraph.gpx_id), notice: "Your elevation profile has been successfully deleted."
+  end
 
-      def set_elevation
-        @elevationgraph = ElevationGraph.find(params[:id])
-      end
+
+  private
+    def elevation_params
+      params.require(:elevationgraph).permit(:chart_title, :x_title, :y_title, :gpx_id, :size, :data)
+    end
+
+    def set_gpx
+      @gpx = Gpx.find(params[:gpx_id])
+    end
+
+    def set_elevation
+      @elevationgraph = ElevationGraph.find(params[:id])
+    end
 end
