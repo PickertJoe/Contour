@@ -23,4 +23,18 @@ class ElevationGraphsController < ApplicationController
         format.html { render :new }
       end
     end
+
+
+    private
+      def elevation_params
+        params.require(:elevationgraph).permit(:chart_title, :x_title, :y_title, :gpx_id, :size, :data)
+      end
+
+      def set_gpx
+        @gpx = Gpx.find(params[:gpx_id])
+      end
+
+      def set_elevation
+        @elevationgraph = ElevationGraph.find(params[:id])
+      end
 end
