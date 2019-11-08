@@ -8,4 +8,34 @@ class ElevationGraph < ApplicationRecord
   validates_presence_of :gpx_id
 
   enum size: [:small, :medium, :large]
+
+  # This method will read the attached .gpx data file and extract the elevation data as a time series
+  def parse
+
+    doc = Nokogiri::XML(open(ActiveStorage::Blob.service.send(:path_for, data.key)))
+    elev_array = []
+    time_array = []
+
+    # Reading the XML file to pull all data contained in <ele> tags
+    doc.css("ele").each do |link|
+      elev_array << link_text.to_f
+    end
+
+    # Likewise for time data
+    doc.css("time").each do |link|
+      # To properly plot the time data in UTC, we have to convert the reported data into milliseconds
+      time_array << Time.parse(link.text, "DD.MM.YYYY hh:mm:ss").to_i*1000
+    end
+
+    # Casting the parsed arrays into Daru Vectors
+    elev_vector = Daru::Vector.new(elev_array)
+    time_vector = Daru::Vector.new(time_array)
+
+    # Combining the vectors into a single Daru data frame
+    @elev_df = Daru::DataFrame.new({
+      Time: time_vector,
+      Elevation: elev_vector,
+    },
+      order: [:Time, :Elevation])
+  end
 end
