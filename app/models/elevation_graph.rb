@@ -38,4 +38,33 @@ class ElevationGraph < ApplicationRecord
     },
       order: [:Time, :Elevation])
   end
+
+  # This method will create and options hash from the data specified by the user for the plot
+  def options
+
+    @opts = {
+        chart: {
+          defaultSeriesType: 'line'},
+        title: {
+          text: self.chart_title
+          },
+
+        xAxis: {
+          title:{
+            text: self.x_title
+          },
+          type: 'datetime'
+        },
+
+        yAxis: {
+          title: {
+            text: self.y_title
+          }
+        },
+
+        legend:{
+          enabled: false
+        },
+      }
+    end
 end
