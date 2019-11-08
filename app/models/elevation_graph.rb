@@ -1,5 +1,6 @@
 class ElevationGraph < ApplicationRecord
   has_one_attached :image
+  has_one_attached :data
   belongs_to :gpx
 
   validates_presence_of :chart_title
