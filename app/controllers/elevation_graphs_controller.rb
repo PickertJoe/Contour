@@ -1,0 +1,2 @@
+class ElevationGraphsController < ApplicationController
+end
