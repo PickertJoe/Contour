@@ -7,14 +7,14 @@ class GpxesController < ApplicationController
   end
 
   def new
-    @gpx = @user.gpx.build
+    @gpx = current_user.gpxes.build
   end
 
   def edit
   end
 
   def create
-    @gpx = @user.gpx.build(gpx_params)
+    @gpx = current_user.gpxes.build(gpx_params)
 
     respond_to do |format|
       if @gpx.save

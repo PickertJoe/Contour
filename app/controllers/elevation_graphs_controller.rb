@@ -3,7 +3,7 @@ class ElevationGraphsController < ApplicationController
   before_action :set_elevation, only: [:show, :edit, :update, :destroy]
 
   def new
-    @elevationgraph = @gpx.elevationgraph.build
+    @elevationgraph = @gpx.elevationgraphs.build
   end
 
   def index
@@ -11,7 +11,7 @@ class ElevationGraphsController < ApplicationController
   end
 
   def create
-    @elevation = @gpx.elevationgraph.build(elevation_params)
+    @elevation = @gpx.elevationgraphs.build(elevation_params)
 
     respond_to do |format|
       if @elevationgraph.save

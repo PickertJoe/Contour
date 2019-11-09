@@ -1,5 +1,5 @@
 .container-fluid
-  %h1.text-center GPX files for #{current_user.email}
+  %h1.text-center.text-header GPX files for #{current_user.email}
   .row.text-background
     %table.table
       %tr
@@ -13,7 +13,8 @@
           %td= g.activity
           %td= g.created_at
           %td= g.updated_at
-          %td= link_to "New Visualization"
+          %td= link_to "Elevation Profiles", gpx_elevation_graphs_path(g)
+          %td= link_to "Topographic Map"
           %td= link_to "Edit file", edit_gpx_path(g)
           %td= link_to "Delete", gpx_path(g), method: :delete
 
