@@ -9,7 +9,7 @@
   = f.text_field :y_title
   %br
   = f.label :size, "Choose Portrait Size"
-  = f.collection_radio_buttons :size, Elevation.sizes, :first, :first
+  = f.select :size, options_for_select(ElevationGraph.sizes.keys.map { |size| [size.humanize, size]})
   %br
   %br
   = f.submit

@@ -67,5 +67,5 @@ class ElevationGraph < ApplicationRecord
           enabled: false
         },
       }
-    end
+  end
 end
