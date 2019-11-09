@@ -1,21 +1,19 @@
 .container-fluid
-  .row
-    .col-3
-    .col-6.text-background
-      .table
+  .row.text-background
+    %table.table
+      %tr
+        %th File Name
+        %th Activity Type
+        %th Date Uploaded
+        %th Last Uploaded
+      - @gpxes.each do |g|
         %tr
-          %th File Name
-          %th Activity Type
-          %th Date Uploaded
-          %th Last Uploaded
-        - @gpxes.each do |g|
-          %tr
-            %td= g.name
-            %td= g.activity
-            %td= g.created_at
-            %td= g.updated_at
-            %td= link_to "New Visualization"
-            %td= link_to "Edit file", edit_gpx_path(@user, g)
-            %td= link_to "Delete", gpx_path(g), method: :delete
-    .col-3
+          %td= g.name
+          %td= g.activity
+          %td= g.created_at
+          %td= g.updated_at
+          %td= link_to "New Visualization"
+          %td= link_to "Edit file", edit_gpx_path(g)
+          %td= link_to "Delete", gpx_path(g), method: :delete
+
 
