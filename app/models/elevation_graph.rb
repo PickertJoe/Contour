@@ -19,7 +19,7 @@ class ElevationGraph < ApplicationRecord
 
     # Reading the XML file to pull all data contained in <ele> tags
     doc.css("ele").each do |link|
-      elev_array << link_text.to_f
+      elev_array << link.text.to_f
     end
 
     # Likewise for time data
