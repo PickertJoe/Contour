@@ -1,0 +1,22 @@
+.container-fluid
+  %h1.text-center Elevation profiles for #{@gpx.name}
+  %table.table
+    %tr
+      %th Profile name
+      %th Size
+      %th Date uploaded
+      %th Last updated
+    - @elevationgraphs.each do |g|
+      %tr
+        %td= g.chart_title
+        %td= g.size
+        %td= g.created_at
+        %td= g.updated_at
+        %td= link_to "See visualiziation", elevation_graph_path(g)
+        %td= link_to "Edit file", edit_elevation_graph_path(g)
+        %td= link_to "Delete", elevation_graph_path(g), method: :delete
+
+  %br
+  =link_to "Create New", new_gpx_elevation_graph_path
+  %br
+  =link_to "GPX File Index", user_gpxes_path(current_user)
