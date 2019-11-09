@@ -1,8 +1,8 @@
 class Gpx < ApplicationRecord
   has_one_attached :file
   belongs_to :user
-  has_many :elevationgraphs
-  has_many :topographicmaps
+  has_many :elevation_graph
+  has_many :topographic_map
 
   validates_presence_of :name
   validates_presence_of :activity
