@@ -34,10 +34,10 @@ class ElevationGraph < ApplicationRecord
 
     # Combining the vectors into a single Daru data frame
     @elev_df = Daru::DataFrame.new({
-      Time: time_vector,
-      Elevation: elev_vector,
+      time: time_vector,
+      elevation: elev_vector,
     },
-      order: [:Time, :Elevation])
+      order: [:time, :elevation])
   end
 
   # This method will create and options hash from the data specified by the user for the plot
