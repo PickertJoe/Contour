@@ -26,7 +26,6 @@ class ElevationGraphsController < ApplicationController
   end
 
   def show
-    Daru::View.plotting_library = :highcharts
     @data = @elevationgraph.parse
     @opts = @elevationgraph.options
   end
