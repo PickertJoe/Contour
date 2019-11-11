@@ -14,7 +14,7 @@ class ElevationGraph < ApplicationRecord
   # This method will read the attached .gpx data file and extract the elevation data as a time series
   def parse
 
-    doc = Nokogiri::XML(open(ActiveStorage::Blob.service.send(:path_for, data.key)))
+    doc = Nokogiri::XML(self.gpx.file.download.to_s)
     elev_array = []
     time_array = []
 
