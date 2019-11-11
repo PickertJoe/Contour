@@ -12,11 +12,12 @@ class ElevationGraphsController < ApplicationController
 
   def create
     @elevationgraph = @gpx.elevation_graph.build(elevation_params)
+    @elevationgraph.data = @elevationgraph.parse
+
 
     respond_to do |format|
       if @elevationgraph.save
         # Inheriting the attachment of its parent object
-        @elevationgraph.data.attach(@gpx.file.blob)
         format.html { redirect_to @elevationgraph }
       else
         flash.now[:alert] = "Could not create new elevation profile. Please check input."
@@ -26,7 +27,7 @@ class ElevationGraphsController < ApplicationController
   end
 
   def show
-    @data = @elevationgraph.parse
+    @data = @elevationgraph.data
     @opts = @elevationgraph.options
   end
 

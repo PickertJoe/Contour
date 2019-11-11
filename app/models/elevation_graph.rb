@@ -1,13 +1,13 @@
 class ElevationGraph < ApplicationRecord
 
   has_one_attached :image
-  has_one_attached :data
   belongs_to :gpx
 
   validates_presence_of :chart_title
   validates_presence_of :x_title
   validates_presence_of :y_title
   validates_presence_of :gpx_id
+  validates_presence_of :data
 
   enum size: [:small, :medium, :large]
 
@@ -34,7 +34,7 @@ class ElevationGraph < ApplicationRecord
     time_vector = Daru::Vector.new(time_array)
 
     # Combining the vectors into a single Daru data frame
-    @elev_df = Daru::DataFrame.new({
+    elev_df = Daru::DataFrame.new({
       time: time_vector,
       elevation: elev_vector,
     },
