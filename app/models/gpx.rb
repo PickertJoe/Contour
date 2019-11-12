@@ -37,8 +37,8 @@ class Gpx < ApplicationRecord
 
   def to_daru
     # Casting the parsed arrays into Daru Vectors
-    elev_vector = Daru::Vector.new(gpx_data.elevation)
-    time_vector = Daru::Vector.new(gpx_data.time)
+    elev_vector = Daru::Vector.new(gpx_datum.elevation)
+    time_vector = Daru::Vector.new(gpx_datum.time)
 
     # Combining the vectors into a single Daru data frame
     Daru::DataFrame.new({

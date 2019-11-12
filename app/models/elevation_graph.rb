@@ -14,8 +14,6 @@ class ElevationGraph < ApplicationRecord
 
   def to_daru
     frame = gpx.to_daru
-    # operate on that frame
-    frame
   end
 
   # This method will create and options hash from the data specified by the user for the plot
@@ -24,19 +22,19 @@ class ElevationGraph < ApplicationRecord
       chart: {
         defaultSeriesType: 'line'},
       title: {
-        text: self.chart_title
+        text: chart_title
         },
 
       xAxis: {
         title:{
-          text: self.x_title
+          text: x_title
         },
         type: 'datetime'
       },
 
       yAxis: {
         title: {
-          text: self.y_title
+          text: y_title
         }
       },
 
