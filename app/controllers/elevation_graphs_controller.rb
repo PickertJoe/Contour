@@ -12,12 +12,9 @@ class ElevationGraphsController < ApplicationController
 
   def create
     @elevationgraph = @gpx.elevation_graph.build(elevation_params)
-    @elevationgraph.data = @elevationgraph.parse
-
 
     respond_to do |format|
       if @elevationgraph.save
-        # Inheriting the attachment of its parent object
         format.html { redirect_to @elevationgraph }
       else
         flash.now[:alert] = "Could not create new elevation profile. Please check input."
@@ -27,7 +24,7 @@ class ElevationGraphsController < ApplicationController
   end
 
   def show
-    @data = @elevationgraph.data
+    @data = @elevationgraph.to_daru
     @opts = @elevationgraph.options
   end
 
@@ -47,7 +44,7 @@ class ElevationGraphsController < ApplicationController
 
   def destroy
     @elevationgraph.destroy
-    redirect_to gpx_elevationgraphs_path(@elevationgraph.gpx_id), notice: "Your elevation profile has been successfully deleted."
+    redirect_to gpx_elevation_graphs_path(@elevationgraph.gpx_id), notice: "Your elevation profile has been successfully deleted."
   end
 
 

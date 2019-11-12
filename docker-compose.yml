@@ -1,0 +1,27 @@
+version: "3"
+services:
+  app:
+    image: brandnewbox/bnb-ruby:2.6-postgresql
+    command: bundle exec rails s -b 0.0.0.0
+    env_file: .docker-development-vars
+    volumes:
+      - .:/app:cached
+      - bundle_cache:/usr/local/bundle
+      - node_cache:/app/node_modules
+    ports:
+      - "3000:3000"
+  redis:
+    image: 'redis:3.2-alpine'
+  # sidekiq:
+  #   image: brandnewbox/bnb-ruby:2.6-postgresql
+  #   command: bundle exec sidekiq -C ./config/sidekiq.yml
+  #   volumes:
+  #     - .:/app:cached
+  #     - bundle_cache:/usr/local/bundle
+  #     - node_cache:/app/node_modules
+  #   env_file: .docker-development-vars
+  #   depends_on:
+  #     - 'redis'
+volumes:
+  bundle_cache:
+  node_cache:
