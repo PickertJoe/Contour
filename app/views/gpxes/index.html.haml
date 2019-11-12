@@ -1,21 +1,27 @@
 .container-fluid
   %h1.text-center.text-header GPX files for #{current_user.email}
-  .row.text-background
-    %table.table
-      %tr
-        %th File Name
-        %th Activity Type
-        %th Date Uploaded
-        %th Last Uploaded
-      - @gpxes.each do |g|
+  .row
+    .col
+    .col-8.text-background
+      %table.table
         %tr
-          %td= g.name
-          %td= g.activity
-          %td= g.created_at
-          %td= g.updated_at
-          %td= link_to "Elevation Profiles", gpx_elevation_graphs_path(g)
-          %td= link_to "Topographic Map"
-          %td= link_to "Edit file", edit_gpx_path(g)
-          %td= link_to "Delete", gpx_path(g), method: :delete
-
+          %th File Name
+          %th Activity Type
+          %th Date Uploaded
+          %th Last Uploaded
+        - @gpxes.each do |g|
+          %tr
+            %td= g.name
+            %td= g.activity
+            %td= g.created_at
+            %td= g.updated_at
+            %td= link_to "Elevation Profiles", gpx_elevation_graphs_path(g)
+            %td= link_to "Topographic Map"
+            %td= link_to "Edit file", edit_gpx_path(g)
+            %td= link_to "Delete", gpx_path(g), method: :delete
+      =link_to "Upload New GPX File", new_user_gpx_path
+      %br
+      %br
+      =link_to "Home", root_path
+    .col
 
