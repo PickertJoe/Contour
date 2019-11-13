@@ -1,20 +1,20 @@
 class GpxesController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :new, :create]
+  before_action :authenticate_user!, only: [:index, :new, :create, :edit]
   before_action :set_gpx, only: [:show, :edit, :update, :destroy]
 
   def index
-    @gpxes = @user.gpxes
+    @gpxes = current_user.gpxes
   end
 
   def new
-    @gpx = @user.gpxes.build
+    @gpx = current_user.gpxes.build
   end
 
   def edit
   end
 
   def create
-    @gpx = @user.gpxes.build(gpx_params)
+    @gpx = current_user.gpxes.build(gpx_params)
 
     respond_to do |format|
       if @gpx.save

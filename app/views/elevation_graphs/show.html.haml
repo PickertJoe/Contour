@@ -1,0 +1,4 @@
+%h1.text-center.text-header Elevation profile for #{@elevationgraph.chart_title}
+=link_to "#{@elevationgraph.chart_title} Index", gpx_elevation_graphs_path(@elevationgraph.gpx_id)
+= daru_chart(@data, @opts)
+

@@ -1,10 +1,11 @@
-= form_with model: [current_user, @gpx] do |f|
+= form_with model: [current_user, @gpx], local:true do |f|
   = f.label :name, "File Name"
   = f.text_field :name
   %br
   = f.label :activity, "Activity Type"
   = f.select :activity, options_for_select(Gpx.activities.keys.map { |activity| [activity.humanize, activity]})
   %br
+
   = f.file_field :file
   %br
   %br
