@@ -8,9 +8,11 @@ class GpxesController < ApplicationController
 
   def new
     @gpx = current_user.gpxes.build
+    @path = [current_user, @gpx]
   end
 
   def edit
+    @path = @gpx
   end
 
   def create
@@ -47,7 +49,7 @@ class GpxesController < ApplicationController
 
   private
     def set_user
-      @user = User.find(params[:user_id])
+      @user = current_user
     end
 
     def set_gpx

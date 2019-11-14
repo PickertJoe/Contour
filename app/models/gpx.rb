@@ -13,7 +13,6 @@ class Gpx < ApplicationRecord
 
   enum activity: [:hike, :run, :bike, :swim, :ski, :snowboard]
 
-
   def gpx_list
     gpx_activity = Gpx.activities.keys.map { |activity| [activity.humanize, activity]}
   end
