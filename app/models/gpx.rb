@@ -1,4 +1,6 @@
 class Gpx < ApplicationRecord
+  after_create_commit :parse_gpx, if: :new_record?
+
   has_one_attached :file
   belongs_to :user
   has_many :elevation_graph
@@ -11,7 +13,6 @@ class Gpx < ApplicationRecord
 
   enum activity: [:hike, :run, :bike, :swim, :ski, :snowboard]
 
-  after_save :parse_gpx, if: :new_record?
 
   def gpx_list
     gpx_activity = Gpx.activities.keys.map { |activity| [activity.humanize, activity]}
