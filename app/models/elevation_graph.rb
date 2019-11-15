@@ -25,6 +25,16 @@ class ElevationGraph < ApplicationRecord
         text: chart_title
         },
 
+      navigation: {
+        buttonOptions: {
+          enabled: false
+        }
+      },
+
+      legend:{
+        enabled: false
+      },
+
       xAxis: {
         title:{
           text: x_title
@@ -38,9 +48,7 @@ class ElevationGraph < ApplicationRecord
         }
       },
 
-      legend:{
-        enabled: false
-      },
+
     }
   end
 end

@@ -1,5 +1,5 @@
 class Gpx < ApplicationRecord
-  after_create_commit :parse_gpx, if: :new_record?
+  after_create_commit :parse_gpx
 
   has_one_attached :file
   belongs_to :user
