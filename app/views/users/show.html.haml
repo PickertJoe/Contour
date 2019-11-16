@@ -2,16 +2,16 @@
   .row
     .col-3
     .col-6.text-background
-      %h3 Welcome back #{@user.first_name}
-      %h3= @user.email
-      %h3 Member since
-      %h3= @user.created_at
-      =link_to "Upload New GPX", new_user_gpx_path(current_user)
+      %h3 Welcome back #{@user.first_name}!
+      %h3 Email address: #{@user.email}
+      %h3 Member since: #{@user.created_at}
+      %h3 Files uploaded: #{@user.gpxes.count}
+      =link_to "Upload New GPX", new_user_gpx_path(current_user), :class => "index-link"
       %br/
-      =link_to "Browse your files", user_gpxes_path(current_user)
+      =link_to "Browse your files", user_gpxes_path(current_user), :class => "index-link"
       - if current_user.admin?
-        =link_to "Admin Dashboard", trestle_path
+        =link_to "Admin Dashboard", trestle_path, :class => "index-link"
       %br/
-      =link_to "Edit profile", edit_user_registration_path
+      =link_to "Edit profile", edit_user_registration_path, :class => "index-link"
     .col-3
 
