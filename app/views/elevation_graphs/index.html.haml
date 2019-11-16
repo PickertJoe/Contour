@@ -12,15 +12,15 @@
         - @elevationgraphs.each do |g|
           %tr
             %td= g.chart_title
-            %td= g.size
+            %td= g.size.titleize
             %td= g.created_at
             %td= g.updated_at
-            %td= link_to "See visualiziation", elevation_graph_path(g)
-            %td= link_to "Edit file", edit_elevation_graph_path(g)
-            %td= link_to "Delete", elevation_graph_path(g), method: :delete
+            %td= link_to "See visualiziation", elevation_graph_path(g), :class => "index-link"
+            %td= link_to "Edit file", edit_elevation_graph_path(g), :class => "index-link"
+            %td= link_to "Delete", elevation_graph_path(g), method: :delete, :class => "index-link"
 
       %br/
-      =link_to "Create New", new_gpx_elevation_graph_path
+      =link_to "Create New", new_gpx_elevation_graph_path, :class => "index-link"
       %br
-      =link_to "GPX File Index", user_gpxes_path(current_user)
+      =link_to "GPX File Index", user_gpxes_path(current_user), :class => "index-link"
     .col
