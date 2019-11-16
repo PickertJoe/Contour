@@ -2,13 +2,16 @@
   .row
     .col-3
     .col-6.text-background
+      %h3 Welcome back #{@user.first_name}
       %h3= @user.email
       %h3 Member since
       %h3= @user.created_at
       =link_to "Upload New GPX", new_user_gpx_path(current_user)
-      %br
+      %br/
       =link_to "Browse your files", user_gpxes_path(current_user)
       - if current_user.admin?
         =link_to "Admin Dashboard", trestle_path
+      %br/
+      =link_to "Edit profile", edit_user_registration_path
     .col-3
 
