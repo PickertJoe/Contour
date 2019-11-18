@@ -72,3 +72,4 @@ gem 'daru'
 gem 'daru-view'
 gem 'nokogiri'
 
+gem 'chartkick'
