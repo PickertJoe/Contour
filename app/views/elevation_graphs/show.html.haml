@@ -4,5 +4,5 @@
     .col
     .col-8.text-center
       =link_to "Profile Index", gpx_elevation_graphs_path(@elevationgraph.gpx_id), :class => 'body-link'
-      = line_chart @elevationgraph.gpx.gpx_datum
+      = line_chart @elevationgraph.gpx.gpx_datum.elevation
     .col

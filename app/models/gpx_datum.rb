@@ -3,4 +3,8 @@ class GpxDatum < ApplicationRecord
 
   validates_presence_of :time
   validates_presence_of :elevation
+
+  def zip
+    data_frame = time.zip(elevation)
+  end
 end
