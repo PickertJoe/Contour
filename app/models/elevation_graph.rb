@@ -12,13 +12,12 @@ class ElevationGraph < ApplicationRecord
 
   enum size: [:small, :medium, :large]
 
-  def get_time
-    time = gpx.gpx_datum.time
+  def zip
+    time = gpx.gpx_datum.time.drop(1)
+    elevation = gpx.gpx_datum.elevation
+    data_frame = time.zip(elevation)
   end
 
-  def get_elevation
-    elevation = gpx.gpx_datum.elevation
-  end
 
   # This method will create and options hash from the data specified by the user for the plot
   def options

@@ -24,8 +24,8 @@ class ElevationGraphsController < ApplicationController
   end
 
   def show
-    @time = @elevationgraph.get_time
-    @elevation = @elevationgraph.get_elevation
+    @data = @elevationgraph.zip
+    #@elevation = @elevationgraph.get_elevation
   end
 
   def edit
