@@ -17,41 +17,4 @@ class ElevationGraph < ApplicationRecord
     elevation = gpx.gpx_datum.elevation
     data_frame = time.zip(elevation)
   end
-
-
-  # This method will create and options hash from the data specified by the user for the plot
-  def options
-    {
-      chart: {
-        defaultSeriesType: 'line'},
-      title: {
-        text: chart_title
-        },
-
-      navigation: {
-        buttonOptions: {
-          enabled: false
-        }
-      },
-
-      legend:{
-        enabled: false
-      },
-
-      xAxis: {
-        title:{
-          text: x_title
-        },
-        type: 'datetime'
-      },
-
-      yAxis: {
-        title: {
-          text: y_title
-        }
-      },
-
-
-    }
-  end
 end

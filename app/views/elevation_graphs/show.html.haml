@@ -2,9 +2,9 @@
   %h1.text-center.text-header Elevation profile for #{@elevationgraph.chart_title}
   .row
     .col
-    .col-8.text-center
+    .col-8.text-center{:class => 'container'}
       =link_to "Profile Index", gpx_elevation_graphs_path(@elevationgraph.gpx_id), :class => 'body-link'
-      #container{:style => "width:100%; height:400px;"}
+      #container
       :javascript
         #{render 'plot.js'}
     .col
