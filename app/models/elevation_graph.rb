@@ -13,7 +13,11 @@ class ElevationGraph < ApplicationRecord
   enum size: [:small, :medium, :large]
 
   def zip
+    # There's some fluke in the gpx files where the parsing script in duplicating the first time value
+    # Creating uneven array lengths between the time and elevation data
+    # This is a stand-in fix until I can figure out what's going on with the parsing function
     time = gpx.gpx_datum.time.drop(1)
+
     elevation = gpx.gpx_datum.elevation
     data_frame = time.zip(elevation)
   end

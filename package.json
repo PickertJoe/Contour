@@ -7,9 +7,6 @@
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "^4.0.7",
     "bootstrap": "^4.3.1",
-    "chart.js": "^2.9.3",
-    "chartkick": "^3.2.0",
-    "highcharts": "^7.2.1",
     "rfs": "^9.0.1",
     "turbolinks": "^5.2.0"
   },
