@@ -24,8 +24,8 @@ class ElevationGraphsController < ApplicationController
   end
 
   def show
-    @data = @elevationgraph.to_daru
-    @opts = @elevationgraph.options
+    @time = @elevationgraph.get_time
+    @elevation = @elevationgraph.get_elevation
   end
 
   def edit

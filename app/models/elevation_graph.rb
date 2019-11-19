@@ -12,8 +12,12 @@ class ElevationGraph < ApplicationRecord
 
   enum size: [:small, :medium, :large]
 
-  def to_daru
-    frame = gpx.gpx_datum.zip
+  def get_time
+    time = gpx.gpx_datum.time
+  end
+
+  def get_elevation
+    elevation = gpx.gpx_datum.elevation
   end
 
   # This method will create and options hash from the data specified by the user for the plot
