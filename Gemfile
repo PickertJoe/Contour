@@ -67,8 +67,5 @@ gem 'trestle'
 # Adding validations gem for ActiveStorage
 gem 'active_storage_validations'
 
-# Adding gems for elevation graph visualization
-gem 'daru'
-gem 'daru-view'
-gem 'nokogiri'
+gem 'highcharts-rails'
 

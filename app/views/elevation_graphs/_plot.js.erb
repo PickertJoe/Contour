@@ -1,0 +1,44 @@
+Highcharts.chart('container', {
+
+        title: {
+            text: '<%=@elevationgraph.chart_title%>'
+        },
+
+        xAxis: {
+            title: {
+                text: '<%= @elevationgraph.x_title %>'
+            },
+            type: 'datetime'
+        },
+
+        yAxis: {
+            title: {
+                text: '<%= @elevationgraph.y_title %>'
+            }
+        },
+
+        legend: {
+            enabled: false
+        },
+
+        series: [{
+            data: <%= @data %>
+        }],
+
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+
+    });
+

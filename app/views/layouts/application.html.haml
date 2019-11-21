@@ -9,8 +9,6 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = favicon_link_tag 'Contour.jpg'
-    =raw Daru::View.dependent_script(:highcharts)
-
   %body
     %nav.navbar.navbar-expand-lg.navbar-light
       %a.navbar-brand{:href => "#"} Contour

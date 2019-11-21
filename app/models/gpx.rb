@@ -1,4 +1,6 @@
 class Gpx < ApplicationRecord
+  after_create_commit :parse_gpx
+
   has_one_attached :file
   belongs_to :user
   has_many :elevation_graph
@@ -10,8 +12,6 @@ class Gpx < ApplicationRecord
   validates :file, attached: true, content_type: ['application/gpx+xml']
 
   enum activity: [:hike, :run, :bike, :swim, :ski, :snowboard]
-
-  after_save :parse_gpx, if: :new_record?
 
   def gpx_list
     gpx_activity = Gpx.activities.keys.map { |activity| [activity.humanize, activity]}
@@ -33,18 +33,5 @@ class Gpx < ApplicationRecord
     end
 
     self.gpx_datum = GpxDatum.new(elevation: elev_array, time: time_array)
-  end
-
-  def to_daru
-    # Casting the parsed arrays into Daru Vectors
-    elev_vector = Daru::Vector.new(gpx_datum.elevation)
-    time_vector = Daru::Vector.new(gpx_datum.time)
-
-    # Combining the vectors into a single Daru data frame
-    Daru::DataFrame.new({
-      time: time_vector,
-      elevation: elev_vector,
-    },
-      order: [:time, :elevation])
   end
 end
