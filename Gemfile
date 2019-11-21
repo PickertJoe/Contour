@@ -67,3 +67,5 @@ gem 'trestle'
 # Adding validations gem for ActiveStorage
 gem 'active_storage_validations'
 
+gem 'highcharts-rails'
+
