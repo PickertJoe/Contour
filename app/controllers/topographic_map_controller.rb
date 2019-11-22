@@ -7,7 +7,7 @@ class TopographicMapController < ApplicationController
   end
 
   def index
-    @topographic_map = @gpx.topographic_map
+    @topographic_maps = @gpx.topographic_map
   end
 
   def create
