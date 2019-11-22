@@ -1,0 +1,26 @@
+.container-fluid
+  %h1.text-center.text-header Topographic maps of for "#{@gpx.name}"
+  .row
+    .col
+    .col-8.text-background
+      %table.table
+        %tr
+          %th Profile name
+          %th Size
+          %th Date uploaded
+          %th Last updated
+        - @topographic_maps.each do |g|
+          %tr
+            %td= g.chart_title
+            %td= g.size.titleize
+            %td= g.created_at
+            %td= g.updated_at
+            %td= link_to "See visualiziation", topographic_map_path(g), :class => "index-link"
+            %td= link_to "Edit file", edit_topographic_map_path(g), :class => "index-link"
+            %td= link_to "Delete", topographic_map_path(g), method: :delete, :class => "index-link"
+
+      %br/
+      =link_to "Create New", new_gpx_topographic_map_path, :class => "index-link"
+      %br
+      =link_to "GPX File Index", user_gpxes_path(current_user), :class => "index-link"
+    .col
