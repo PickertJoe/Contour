@@ -1,0 +1,11 @@
+.container-fluid
+  %h1.text-center.text-header Topographic map for #{@topographic_map.chart_title}
+  .row
+    .col
+    .col-8.text-center{:class => 'container'}
+      =link_to "Map Index", gpx_topograhic_maps_path(@elevation_graph.gpx_id), :class => 'body-link'
+      %script{:src => "//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js"}
+      #map
+        :javascript
+          #{render 'map.js'}
+    .col
