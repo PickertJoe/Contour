@@ -1,0 +1,2 @@
+class TopographicMapController < ApplicationController
+end
