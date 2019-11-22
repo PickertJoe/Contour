@@ -2,10 +2,11 @@
   %h1.text-center.text-header Topographic map for #{@topographic_map.chart_title}
   .row
     .col
-    .col-8.text-center{:class => 'container'}
+    .col-8.text-center
       =link_to "Map Index", gpx_topographic_maps_path(@topographic_map.gpx_id), :class => 'body-link'
-      %script{:src => "//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js"}
-      #map
+      //I'm going to have to find a better way of setting the size of the #map div
+      //If I don't explicitly define the size of this div, the map doesn't appear
+      #map.text-center{:style => "width: 100%; height: 500px;"}
         :javascript
           #{render 'map.js'}
     .col
