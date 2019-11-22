@@ -1,6 +1,6 @@
-class TopographicMapController < ApplicationController
+class TopographicMapsController < ApplicationController
   before_action :set_gpx, only: [:index, :new, :create]
-  before_action :set_elevation, only: [:show, :edit, :update, :destroy]
+  before_action :set_topographic, only: [:show, :edit, :update, :destroy]
 
   def new
     @topographic_map = @gpx.topographic_map.build

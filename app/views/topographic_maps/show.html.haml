@@ -3,7 +3,7 @@
   .row
     .col
     .col-8.text-center{:class => 'container'}
-      =link_to "Map Index", gpx_topograhic_maps_path(@elevation_graph.gpx_id), :class => 'body-link'
+      =link_to "Map Index", gpx_topographic_maps_path(@topographic_map.gpx_id), :class => 'body-link'
       %script{:src => "//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js"}
       #map
         :javascript
