@@ -16,5 +16,5 @@
       =image_tag("Plot.png", class: 'img-fluid')
   .row-no-gutters
     .col.text-center
-      %button.btn.btn-light.btn-lg{:type => "button", :href => ""} Let's create!
+      %button.btn.btn-light.btn-lg= button_to "Let's create!", new_user_gpx_path(current_user), :method => "get"
 
