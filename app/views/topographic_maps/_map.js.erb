@@ -1,11 +1,14 @@
 var gpxFilePath = "<%=url_for(@topographic_map.gpx.file)%>";
 L.mapbox.accessToken = 'pk.eyJ1IjoiZGlsYmVydDI1MCIsImEiOiJjazE2eG41N2cxMjVhM2NsYnFtYXBucWM0In0.qjQFUix7bPaSwLZ8IskknA';
 
+
 var map = L.mapbox.map('map')
-    .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/outdoors-v9'));
+    .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/outdoors-v11'));
+
 
 var runLayer = omnivore.gpx(gpxFilePath)
     .on('ready', function() {
     map.fitBounds(runLayer.getBounds());
+    map.showTileBoundaries(false);
     })
     .addTo(map);

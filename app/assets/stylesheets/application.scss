@@ -36,6 +36,10 @@ body{
   justify-content: center;
 }
 
+#elevation_container{
+  height: 50vh;
+}
+
 .faq{
   color: white;
 }
@@ -53,6 +57,11 @@ img{
 
 .index-link{
   color: red;
+}
+
+#map{
+  height: 80vh;
+  width: 100%;
 }
 
 nav{

@@ -4,7 +4,7 @@
     .col
     .col-8.text-center
       =link_to "Profile Index", gpx_elevation_graphs_path(@elevation_graph.gpx_id), :class => 'body-link'
-      #container
+      #elevation_container
         :javascript
           #{render 'plot.js'}
     .col
