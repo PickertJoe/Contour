@@ -1,4 +1,4 @@
-var gpxFilePath = "<%= url_for(@topographic_map.gpx.file) %>";
+var gpxFilePath = "#{url_for(@topographic_map.gpx.file)}";
 L.mapbox.accessToken = 'pk.eyJ1IjoiZGlsYmVydDI1MCIsImEiOiJjazE2eG41N2cxMjVhM2NsYnFtYXBucWM0In0.qjQFUix7bPaSwLZ8IskknA';
 
 var map = L.mapbox.map('map')
@@ -6,6 +6,6 @@ var map = L.mapbox.map('map')
 
 var runLayer = omnivore.gpx(gpxFilePath)
     .on('ready', function() {
-        map.fitBounds(runLayer.getBounds());
+    map.fitBounds(runLayer.getBounds());
     })
     .addTo(map);

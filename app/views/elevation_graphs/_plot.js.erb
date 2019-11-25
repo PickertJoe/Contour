@@ -6,14 +6,14 @@ Highcharts.chart('container', {
 
         xAxis: {
             title: {
-                text: '<%= @elevationgraph.x_title %>'
+                text: '<%=@elevationgraph.x_title%>'
             },
             type: 'datetime'
         },
 
         yAxis: {
             title: {
-                text: '<%= @elevationgraph.y_title %>'
+                text: '<%=@elevationgraph.y_title%>'
             }
         },
 
@@ -30,15 +30,14 @@ Highcharts.chart('container', {
                 condition: {
                     maxWidth: 500
                 },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
                 }
-            }]
-        }
+            }
+        }]
+    }
 
-    });
-
+});
