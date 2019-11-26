@@ -9,9 +9,11 @@ class Gpx < ApplicationRecord
 
   validates_presence_of :name
   validates_presence_of :activity
+  validates_presence_of :unit
   validates :file, attached: true, content_type: ['application/gpx+xml']
 
   enum activity: [:hike, :run, :bike, :swim, :ski, :snowboard]
+  enum unit: [:metric, :english]
 
   def gpx_list
     gpx_activity = Gpx.activities.keys.map { |activity| [activity.humanize, activity]}
@@ -30,6 +32,12 @@ class Gpx < ApplicationRecord
     time_array = doc.css("time").map do |link|
       # To properly plot the time data in UTC, we have to convert the reported data into milliseconds
       Time.parse(link.text, "DD.MM.YYYY hh:mm:ss").to_i*1000
+    end
+
+    if unit == 1:
+      elev_array.each do |i|
+        i *= 3.28084
+      end
     end
 
     self.gpx_datum = GpxDatum.new(elevation: elev_array, time: time_array)
