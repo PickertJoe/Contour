@@ -1,12 +1,6 @@
-= form_with model: [@gpx, @elevation_graph], local:true do |f|
+= form_with model: [@gpx, @topographic_map], local:true do |f|
   = f.label :chart_title, "Chart Title"
   = f.text_field :chart_title
-  %br
-  = f.label :x_title, "X Axis Label"
-  = f.text_field :x_title
-  %br
-  = f.label :y_title, "Y Axis Label"
-  = f.text_field :y_title
   %br
   = f.label :size, "Choose Portrait Size"
   = f.select :size, options_for_select(ElevationGraph.sizes.keys.map { |size| [size.humanize, size]})

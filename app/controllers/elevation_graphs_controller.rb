@@ -3,19 +3,19 @@ class ElevationGraphsController < ApplicationController
   before_action :set_elevation, only: [:show, :edit, :update, :destroy]
 
   def new
-    @elevationgraph = @gpx.elevation_graph.build
+    @elevation_graph = @gpx.elevation_graph.build
   end
 
   def index
-    @elevationgraphs = @gpx.elevation_graph
+    @elevation_graphs = @gpx.elevation_graph
   end
 
   def create
-    @elevationgraph = @gpx.elevation_graph.build(elevation_params)
+    @elevation_graph = @gpx.elevation_graph.build(elevation_params)
 
     respond_to do |format|
-      if @elevationgraph.save
-        format.html { redirect_to @elevationgraph }
+      if @elevation_graph.save
+        format.html { redirect_to @elevation_graph }
       else
         flash.now[:alert] = "Could not create new elevation profile. Please check input."
         format.html { render :new }
@@ -24,7 +24,7 @@ class ElevationGraphsController < ApplicationController
   end
 
   def show
-    @data = @elevationgraph.zip
+    @data = @elevation_graph.zip
   end
 
   def edit
@@ -32,8 +32,8 @@ class ElevationGraphsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @elevationgraph.update(elevation_params)
-        format.html { redirect_to @elevationgraph }
+      if @elevation_graph.update(elevation_params)
+        format.html { redirect_to @elevation_graph }
       else
         flash.now[:alert] = "Could not create elevation profile. Please check input."
         format.html { render :edit }
@@ -42,8 +42,8 @@ class ElevationGraphsController < ApplicationController
   end
 
   def destroy
-    @elevationgraph.destroy
-    redirect_to gpx_elevation_graphs_path(@elevationgraph.gpx_id), notice: "Your elevation profile has been successfully deleted."
+    @elevation_graph.destroy
+    redirect_to gpx_elevation_graphs_path(@elevation_graph.gpx_id), notice: "Your elevation profile has been successfully deleted."
   end
 
 
@@ -57,6 +57,6 @@ class ElevationGraphsController < ApplicationController
     end
 
     def set_elevation
-      @elevationgraph = ElevationGraph.find(params[:id])
+      @elevation_graph = ElevationGraph.find(params[:id])
     end
 end
