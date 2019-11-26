@@ -9,4 +9,6 @@ Rails.application.routes.draw do
       resources :topographic_maps
     end
   end
+
+  resources :charges, only: [:new, :create]
 end
