@@ -69,3 +69,4 @@ gem 'active_storage_validations'
 
 gem 'highcharts-rails'
 
+gem 'stripe'
