@@ -8,13 +8,11 @@
           %th File Name
           %th Activity Type
           %th Date Uploaded
-          %th Last Uploaded
         - @gpxes.each do |g|
           %tr
             %td= g.name
             %td= g.activity.titleize
             %td= g.created_at
-            %td= g.updated_at
             %td= link_to "Elevation Profiles", gpx_elevation_graphs_path(g), :class => "index-link"
             %td= link_to "Topographic Map", gpx_topographic_maps_path(g), :class => "index-link"
             %td= link_to "Edit file", edit_gpx_path(g), :class => "index-link"

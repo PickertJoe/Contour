@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_144720) do
+ActiveRecord::Schema.define(version: 2019_11_26_163451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_144720) do
     t.string "x_title"
     t.string "y_title"
     t.integer "size"
+    t.integer "units"
   end
 
   create_table "gpx_data", force: :cascade do |t|
@@ -60,7 +61,6 @@ ActiveRecord::Schema.define(version: 2019_11_26_144720) do
     t.string "name"
     t.integer "activity"
     t.integer "user_id"
-    t.integer "units"
   end
 
   create_table "topographic_maps", force: :cascade do |t|

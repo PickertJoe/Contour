@@ -49,7 +49,7 @@ class ElevationGraphsController < ApplicationController
 
   private
     def elevation_params
-      params.require(:elevation_graph).permit(:chart_title, :x_title, :y_title, :gpx_id, :size, :data)
+      params.require(:elevation_graph).permit(:chart_title, :x_title, :y_title, :gpx_id, :size, :units, :data)
     end
 
     def set_gpx

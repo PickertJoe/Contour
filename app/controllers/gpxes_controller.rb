@@ -57,7 +57,7 @@ class GpxesController < ApplicationController
     end
 
     def gpx_params
-      params.require(:gpx).permit(:name, :activity, :units, :file, :user_id)
+      params.require(:gpx).permit(:name, :activity, :file, :user_id)
     end
 
 end
