@@ -3,9 +3,9 @@ class Gpx < ApplicationRecord
 
   has_one_attached :file
   belongs_to :user
-  has_many :elevation_graph
-  has_many :topographic_map
-  has_one :gpx_datum
+  has_many :elevation_graph, :dependent => :destroy
+  has_many :topographic_map, :dependent => :destroy
+  has_one :gpx_datum, :dependent => :destroy
 
   validates_presence_of :name
   validates_presence_of :activity

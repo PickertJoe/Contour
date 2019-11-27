@@ -2,7 +2,7 @@ class TopographicMap < ApplicationRecord
   after_commit :set_price
 
   has_one_attached :image
-  has_one :price, as: :priceable
+  has_one :price, as: :priceable, :dependent => :destroy
   belongs_to :gpx
 
   validates_presence_of :chart_title
