@@ -5,6 +5,8 @@ class ChargesController < ApplicationController
   end
 
   def create
+    price = Price.find(params[:id])
+
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
       source: params[:stripeToken],
@@ -12,8 +14,8 @@ class ChargesController < ApplicationController
 
     charge = Stripe::Charge.create({
       customer: customer.id,
-      amount: @amount,
-      description: "Rails Stripe customer",
+      amount: price.value,
+      description: "Contour Stripe customer",
       currency: "usd",
     })
 
