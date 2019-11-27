@@ -12,11 +12,11 @@ class TopographicMap < ApplicationRecord
 
   def set_price
     if size == "small"
-      self.price = Price.new(value: 29.99)
+      self.price = Price.new(value: 2999)
     elsif size == "medium"
-      self.price = Price.new(value: 49.99)
+      self.price = Price.new(value: 4999)
     elsif size == "large"
-      self.price == Price.new(value: 69.99)
+      self.price == Price.new(value: 6999)
     end
   end
 end
