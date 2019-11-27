@@ -1,5 +1,5 @@
 class TopographicMap < ApplicationRecord
-  after_commit :set_price
+  after_save :set_price
 
   has_one_attached :image
   has_one :price, as: :priceable, :dependent => :destroy

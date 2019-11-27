@@ -21,5 +21,5 @@
           - if flash[:error].present?
             #error_explanation
               %p= flash[:error]
-        %script.stripe-button{ src: "https://checkout.stripe.com/checkout.js", data: {amount: @elevation_graph.price.value, description: @elevation_graph.chart_title, key: Rails.configuration.stripe[:publishable_key]}, params: { id: @elevation_graph.price.id }}
+        %script.stripe-button{ src: "https://checkout.stripe.com/checkout.js", data: {amount: @elevation_graph.price.value, description: @elevation_graph.chart_title, key: Rails.configuration.stripe[:publishable_key]}}
 
