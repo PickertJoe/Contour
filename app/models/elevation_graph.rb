@@ -1,6 +1,8 @@
 class ElevationGraph < ApplicationRecord
+  after_create_commit :set_price
 
   has_one_attached :image
+  has_one :price, as: :priceable
 
   belongs_to :gpx
 
@@ -14,8 +16,7 @@ class ElevationGraph < ApplicationRecord
   enum units: [:metric, :english]
 
   def zip
-    # There's some fluke in the gpx files where the parsing script in duplicating the first time value
-    # Creating uneven array lengths between the time and elevation data
+    # For some reason the gpx files have one more time value than elevation value, leading to uneven array size
     # This is a stand-in fix until I can figure out what's going on with the parsing function
     time = gpx.gpx_datum.time.drop(1)
     elevation = gpx.gpx_datum.elevation
@@ -27,4 +28,9 @@ class ElevationGraph < ApplicationRecord
 
     data_frame = time.zip(elevation)
   end
+
+  def set_price
+    if size == "small"
+      self.price = Price.new(value: )
+
 end
