@@ -9,10 +9,10 @@
   = f.text_field :y_title
   %br
   = f.label :size, "Choose Portrait Size"
-  = f.select :size, options_for_select(ElevationGraph.sizes.keys.map { |size| [size.humanize, size]})
+  = f.select :size, options_for_select(ElevationGraph.sizes.keys.map { |size| [size.humanize, size]}, @elevation_graph.size)
   %br
   = f.label :units, "Unit System"
-  = f.select :units, options_for_select(ElevationGraph.units.keys.map { |unit| [unit.humanize, unit]})
+  = f.select :units, options_for_select(ElevationGraph.units.keys.map { |unit| [unit.humanize, unit]}, @elevation_graph.units)
   %br
   %br
   = f.submit

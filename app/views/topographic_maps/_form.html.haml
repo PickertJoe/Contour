@@ -3,7 +3,7 @@
   = f.text_field :chart_title
   %br
   = f.label :size, "Choose Portrait Size"
-  = f.select :size, options_for_select(ElevationGraph.sizes.keys.map { |size| [size.humanize, size]})
+  = f.select :size, options_for_select(ElevationGraph.sizes.keys.map { |size| [size.humanize, size]}, @topographic_map.size)
   %br
   %br
   = f.submit
