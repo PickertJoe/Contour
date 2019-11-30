@@ -5,21 +5,24 @@ class ChargesController < ApplicationController
   end
 
   def create
-    price = Price.find(params[:id])
 
-    @charge = Charge.new charge_params.merge(email: stripe_params['stripeEmail'], card_token: stripe_params['stripeToken'])
+    customer = Stripe::Customer.create({
+      email: params[:stripeEmail],
+      source: params[:stripeToken],
+    })
 
-    raise "Please check payment information" unless @charge.valid?
-    @charge.process_payment
-    @charge.save
+    charge = Stripe::Charge.create({
+      customer: customer.id,
+      # This is a temporary placeholder
+      # I need to find a way to pass the price of the topo/elevation profile
+      # To this controller
+      amount: 50,
+      description: 'Rails Stripe customer',
+      currency: 'usd',
+    })
 
-  rescue e
+  rescue Stripe::CardError => e
     flash[:error] = e.message
-    render :new
+    redirect_to new_charge_path
   end
-
-  private
-    def stripe_params
-      params.permit :stripeEmail, :stripeToken
-    end
 end
