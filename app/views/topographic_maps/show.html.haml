@@ -1,7 +1,6 @@
 .container-fluid
   %h1.text-center.text-header Topographic map for #{@topographic_map.chart_title}
   .row
-    .col
     .col-8.text-center
       =link_to "Map Index", gpx_topographic_maps_path(@topographic_map.gpx_id), :class => 'body-link'
       //I'm going to have to find a better way of setting the size of the #map div
@@ -9,4 +8,17 @@
       #map.text-center
         :javascript
           #{render 'map.js'}
-    .col
+    .col.text-background
+      %h2 Want to see this profile in your home?
+
+      = form_with model: Order.new(graph: @topographic_map) do |f|
+        = f.hidden_field :graph_type
+        = f.hidden_field :graph_id
+        %article
+          %label Price: $#{f.object.price_for_graph.to_f/100}
+          - if flash[:error].present?
+            #error_explanation
+              %p= flash[:error]
+        %script.stripe-button{ src: "https://checkout.stripe.com/checkout.js", data: {amount: f.object.price_for_graph, description: @topographic_map.chart_title, key: Rails.configuration.stripe[:publishable_key]}}
+
+

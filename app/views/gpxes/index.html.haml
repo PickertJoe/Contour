@@ -14,7 +14,7 @@
             %td= g.activity.titleize
             %td= g.created_at
             %td= link_to "Elevation Profiles", gpx_elevation_graphs_path(g), :class => "index-link"
-            %td= link_to "Topographic Map", gpx_topographic_maps_path(g), :class => "index-link"
+            %td= link_to "Topographic Maps", gpx_topographic_maps_path(g), :class => "index-link"
             %td= link_to "Edit file", edit_gpx_path(g), :class => "index-link"
             %td= link_to "Delete", gpx_path(g), method: :delete, :class => "index-link"
       =link_to "Upload New GPX File", new_user_gpx_path, :class => "index-link"
