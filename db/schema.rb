@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_27_212145) do
+ActiveRecord::Schema.define(version: 2019_12_02_213651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,11 +63,15 @@ ActiveRecord::Schema.define(version: 2019_11_27_212145) do
     t.integer "user_id"
   end
 
-  create_table "prices", force: :cascade do |t|
-    t.integer "value"
-    t.string "priceable_type"
-    t.bigint "priceable_id"
-    t.index ["priceable_type", "priceable_id"], name: "index_prices_on_priceable_type_and_priceable_id"
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "graph_type", null: false
+    t.bigint "graph_id", null: false
+    t.integer "total_amount_in_cents", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["graph_type", "graph_id"], name: "index_orders_on_graph_type_and_graph_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "topographic_maps", force: :cascade do |t|
@@ -94,4 +98,5 @@ ActiveRecord::Schema.define(version: 2019_11_27_212145) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "orders", "users"
 end

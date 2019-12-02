@@ -1,8 +1,5 @@
 class ElevationGraph < ApplicationRecord
-  after_save :set_price
-
   has_one_attached :image
-  has_one :price, as: :priceable, :dependent => :destroy
 
   belongs_to :gpx
 
@@ -29,13 +26,13 @@ class ElevationGraph < ApplicationRecord
     data_frame = time.zip(elevation)
   end
 
-  def set_price
+  def price
     if size == "small"
-      self.price = Price.new(value: 2999)
+      2999
     elsif size == "medium"
-      self.price = Price.new(value: 4999)
+      4999
     elsif size == "large"
-      self.price == Price.new(value: 6999)
+      6999
     end
   end
 end

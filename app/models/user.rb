@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :gpxes
   has_many :elevationgraphs,  through: :gpx
   has_many :topographicmaps,  through: :gpx
+  has_many :orders
 
   def full_name
     name = first_name.titleize + " " + last_name.titleize
