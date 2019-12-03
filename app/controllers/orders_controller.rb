@@ -25,6 +25,7 @@ class OrdersController < ApplicationController
         amount: order.total_amount_in_cents,
         description: 'Rails Stripe customer',
         currency: 'usd',
+        receipt_email: customer.email
       })
 
       redirect_to order_path(order)
