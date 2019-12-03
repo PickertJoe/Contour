@@ -2,7 +2,8 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @order = current_user.orders
+    @order = current_user.order
+  end
 
   def show
     @order = current_user.orders.find(params[:id])

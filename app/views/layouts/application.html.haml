@@ -23,8 +23,9 @@
             .nav-link=link_to "Home", root_path
           %li.nav-item
             .nav-link=link_to "FAQ", pages_faq_path
-          %li.nav-item
-            .nav-link=link_to "Create"
+          -if user_signed_in?
+            %li.nav-item
+              .nav-link=link_to "Create", new_user_gpx_path(current_user)
         - if user_signed_in?
           %ul.navbar-nav.ml-auto
             %li.nav-item

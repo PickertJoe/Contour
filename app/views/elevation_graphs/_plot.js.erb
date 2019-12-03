@@ -1,3 +1,9 @@
+Highcharts.setOptions({
+    lang: {
+        thousandsSep: ','
+    }
+});
+
 Highcharts.chart('elevation_container', {
         title: {
             text: '<%=@elevation_graph.chart_title%>'
@@ -9,16 +15,26 @@ Highcharts.chart('elevation_container', {
             type: 'datetime'
         },
         yAxis: {
+            labels: {
+                format: '{value:,.0f}'
+            },
             title: {
                 text: '<%=@elevation_graph.y_title%>'
             }
+        },
+        label: {
+            enabled: false
         },
         legend: {
             enabled: false
         },
         series: [{
-            data: <%= @data %>
+            data: <%= @data %>,
+            name: "Elevation"
         }],
+        tooltip: {
+            valueDecimals: 2
+        },
         responsive: {
             rules: [{
                 condition: {
