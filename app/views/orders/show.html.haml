@@ -1,3 +1,14 @@
 .container-fluid
-  %h1.text-center.text-header Thank you for your purchase!
-  %h1 Review your order details
+  .row
+    .col-3
+    .col-6.text-background
+      %h2 Thank you for your purchase!
+      %h2 Review your order details below:
+      %h4 Name: #{@order.graph.chart_title}
+      %h4 Graphic type: #{@order.graph_type.underscore.humanize}
+      %h4 Graphic size: #{@order.graph.size.humanize}
+      %h4 Price: #{@order.readable_price}
+
+      =link_to "Browse other orders", user_orders_path(current_user), :class => "index-link"
+      %br/
+      =link_to "Browse your files", user_gpxes_path(current_user), :class => "index-link"

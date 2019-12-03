@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
         currency: 'usd',
       })
 
-      redirect_to orders_path(order)
+      redirect_to order_path(order)
     end
 
 
