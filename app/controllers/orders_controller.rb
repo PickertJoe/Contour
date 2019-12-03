@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @order = current_user.order
+    @orders = current_user.orders
   end
 
   def show
@@ -26,9 +26,11 @@ class OrdersController < ApplicationController
         description: 'Rails Stripe customer',
         currency: 'usd',
       })
+
+      redirect_to orders_path(order)
     end
 
-    redirect_to order_path(order)
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_order_path

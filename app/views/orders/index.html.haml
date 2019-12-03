@@ -1,0 +1,25 @@
+.container-fluid
+  %h1.text-center.text-header #{current_user.full_name}'s Orders
+  .row
+    .col
+    .col-8.text-background
+      %table.table
+        %tr
+          %th Graphic Name
+          %th Graphic Type
+          %th Graphic Size
+          %th Price
+          %th Date Ordered
+        - @orders.each do |o|
+          %tr
+            %td= o.graph.chart_title
+            %td= o.graph_type.humanize
+            %td= o.graph.size.titleize
+            %td= o.readable_price
+            %td= o.created_at
+      =link_to "View GPX Index", user_gpxes_path, :class => "index-link"
+      %br
+      %br
+      =link_to "Home", root_path, :class => "index-link"
+    .col
+

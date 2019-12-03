@@ -4,11 +4,12 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users, shallow:true do
+    resources :orders
     resources :gpxes do
       resources :elevation_graphs
       resources :topographic_maps
     end
   end
 
-  resources :orders, only: [:new, :create]
+
 end

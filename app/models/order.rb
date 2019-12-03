@@ -7,4 +7,8 @@ class Order < ApplicationRecord
   def price_for_graph
     graph.price
   end
+
+  def readable_price
+    '$' + '%.2f' % (total_amount_in_cents.to_i/100.0)
+  end
 end

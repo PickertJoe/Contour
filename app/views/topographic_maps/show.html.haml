@@ -3,8 +3,6 @@
   .row.text-center
     .col-8
       =link_to "Map Index", gpx_topographic_maps_path(@topographic_map.gpx_id), :class => 'body-link'
-      //I'm going to have to find a better way of setting the size of the #map div
-      //If I don't explicitly define the size of this div, the map doesn't appear
       #map
         :javascript
           #{render 'map.js'}
