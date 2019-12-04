@@ -7,14 +7,14 @@
         %tr
           %th Profile name
           %th Size
+          %th Unit System
           %th Date uploaded
-          %th Last updated
         - @elevation_graphs.each do |g|
           %tr
             %td= g.chart_title
             %td= g.size.titleize
+            %td= g.units.titleize
             %td= g.created_at
-            %td= g.updated_at
             %td= link_to "See profile", elevation_graph_path(g), :class => "index-link"
             %td= link_to "Edit file", edit_elevation_graph_path(g), :class => "index-link"
             %td= link_to "Delete", elevation_graph_path(g), method: :delete, :class => "index-link"

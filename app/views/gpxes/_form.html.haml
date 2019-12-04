@@ -3,7 +3,7 @@
   = f.text_field :name
   %br
   = f.label :activity, "Activity Type"
-  = f.select :activity, options_for_select(Gpx.activities.keys.map { |activity| [activity.humanize, activity]})
+  = f.select :activity, options_for_select(Gpx.activities.keys.map { |activity| [activity.humanize, activity]}, @gpx.activity)
   %br
   - unless @gpx.persisted?
     = f.file_field :file

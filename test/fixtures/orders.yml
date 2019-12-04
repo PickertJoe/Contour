@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  graph: one
+  total_amount_in_cents: 1
+
+two:
+  user: two
+  graph: two
+  total_amount_in_cents: 1

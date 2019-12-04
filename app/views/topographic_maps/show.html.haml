@@ -1,12 +1,12 @@
 .container-fluid
   %h1.text-center.text-header Topographic map for #{@topographic_map.chart_title}
-  .row
-    .col
-    .col-8.text-center
+  .row.text-center
+    .col-8
       =link_to "Map Index", gpx_topographic_maps_path(@topographic_map.gpx_id), :class => 'body-link'
-      //I'm going to have to find a better way of setting the size of the #map div
-      //If I don't explicitly define the size of this div, the map doesn't appear
-      #map.text-center
+      #map
         :javascript
           #{render 'map.js'}
-    .col
+    .col.text-background
+      %h2 Want to see this profile in your home?
+      = image_tag('Topo_wall.jpg', class: 'img-fluid')
+      = render 'shared/order', object: @topographic_map
