@@ -1,6 +1,6 @@
 //This header might be too verbose, but I ran into routing issues after I made the order model
 //A nested resource under user
-= form_with model: Order.create(graph: @topographic_map), url: user_orders_path(current_user), method: :post  do |f|
+= form_with model: [current_user, Order.new(graph: @topographic_map)] do |f|
   = f.hidden_field :graph_type
   = f.hidden_field :graph_id
   %article
