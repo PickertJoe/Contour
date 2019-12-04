@@ -1,0 +1,11 @@
+= form_with model: [current_user, Order.new(graph: object)] do |f|
+  = f.hidden_field :graph_type
+  = f.hidden_field :graph_id
+  %article
+  %label Price: $#{f.object.price_for_graph.to_f/100}
+  - if flash[:error].present?
+    #error_explanation
+    %p= flash[:error]
+  %br
+  %script.stripe-button{ src: "https://checkout.stripe.com/checkout.js", data: {amount: f.object.price_for_graph, description: object.chart_title, key: Rails.configuration.stripe[:publishable_key]}}
+
