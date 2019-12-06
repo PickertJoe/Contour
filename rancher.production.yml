@@ -1,0 +1,9 @@
+rancher:
+  environment_id: 1a48885
+  service_names:
+    - app/web
+s2i:
+  builder_image: brandnewbox/bnb-ruby:2.6-postgresql
+  target_image: brandnewbox/contour
+  flags: -e RAILS_ENV=production
+  registry_host: 596395833517.dkr.ecr.us-east-1.amazonaws.com
