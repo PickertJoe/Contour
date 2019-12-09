@@ -1,24 +1,7 @@
-# README
+# Contour
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Contour was a personal project I made during my apprenticeship at Brand New Box. The primary function of this app is to allow users to generate custom elevation profiles and topographic maps from their personal GPS data files. As a former mountain guide and lifetime outdoorsman, I was drawn to this idea by my passion for the intersection between data and backcountry exploration.
 
-Things you may want to cover:
+As a newcomer to Ruby on Rails, I found the process of developing this site extremely educational and rewarding. Although this site is not currently in production, I might come back to it in the future to enhance the customizability of the visualizations and overall design of the website.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+In the meantime, feel free to explore the structure of my app and the beautiful elegance contained in the Ruby programming language!
