@@ -17,7 +17,6 @@ class TopographicMapsController < ApplicationController
       if @topographic_map.save
         format.html { redirect_to @topographic_map }
       else
-        flash.now[:alert] = "Could not create new topographic map. Please check input."
         format.html { render :new }
       end
     end
