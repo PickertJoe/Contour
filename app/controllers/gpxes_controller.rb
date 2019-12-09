@@ -22,6 +22,7 @@ class GpxesController < ApplicationController
       if @gpx.save
         format.html {redirect_to user_gpxes_path(current_user), notice: "Gpx file was successfully uploaded"}
       else
+        @path = [current_user, @gpx]
         format.html {render :new}
       end
     end
@@ -33,7 +34,6 @@ class GpxesController < ApplicationController
     respond_to do |format|
       if @gpx.save
         format.html {redirect_to user_gpxes_path(current_user), notice: "Gpx file was successfully updated"}
-        # Placeholder for future JSON response
       else
         format.html {render :edit}
       end
