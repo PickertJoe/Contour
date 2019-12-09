@@ -17,7 +17,6 @@ class ElevationGraphsController < ApplicationController
       if @elevation_graph.save
         format.html { redirect_to @elevation_graph }
       else
-        flash.now[:alert] = "Could not create new elevation profile. Please check input."
         format.html { render :new }
       end
     end

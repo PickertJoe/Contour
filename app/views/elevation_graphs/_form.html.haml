@@ -1,4 +1,14 @@
 = form_with model: [@gpx, @elevation_graph], local:true do |f|
+  - if @elevation_graph.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@elevation_graph.errors.count, "error")
+        prohibited
+        this article from being saved:
+      %ul
+        - @elevation_graph.errors.full_messages.each do |msg|
+          %li= msg
+
   = f.label :chart_title, "Chart Title"
   = f.text_field :chart_title
   %br
