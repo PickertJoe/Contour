@@ -21,10 +21,8 @@ class GpxesController < ApplicationController
     respond_to do |format|
       if @gpx.save
         format.html {redirect_to user_gpxes_path(current_user), notice: "Gpx file was successfully uploaded"}
-        # How to provide a JSON response?
       else
         format.html {render :new}
-        # Placeholder for future JSON response
       end
     end
   end
