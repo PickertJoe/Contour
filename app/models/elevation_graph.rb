@@ -3,6 +3,8 @@ class ElevationGraph < ApplicationRecord
 
   belongs_to :gpx
 
+  # This is a test comment
+
   validates_presence_of :chart_title
   validates_presence_of :x_title
   validates_presence_of :y_title
