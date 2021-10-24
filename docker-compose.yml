@@ -1,27 +1,35 @@
-version: "3"
+version: "3.4"
+x-base: &base
+  image: contour-dev
+  build:
+    context: ./devops
+  env_file: .docker-development-vars
+  environment:
+    - BUNDLE_PATH=/app/vendor/bundle
+  volumes:
+    - .:/app:cached
+    - ./vendor/bundle:/app/vendor/bundle:delegated
+    - ./node_modules:/app/node_modules:delegated
 services:
   app:
-    image: brandnewbox/bnb-ruby:2.6-postgresql
-    command: bundle exec rails s -b 0.0.0.0
-    env_file: .docker-development-vars
-    volumes:
-      - .:/app:cached
-      - bundle_cache:/usr/local/bundle
-      - node_cache:/app/node_modules
+    <<: *base
+    command: bundle exec puma -C config/puma.rb
     ports:
-      - "3000:3000"
-  redis:
-    image: 'redis:3.2-alpine'
-  # sidekiq:
-  #   image: brandnewbox/bnb-ruby:2.6-postgresql
-  #   command: bundle exec sidekiq -C ./config/sidekiq.yml
-  #   volumes:
-  #     - .:/app:cached
-  #     - bundle_cache:/usr/local/bundle
-  #     - node_cache:/app/node_modules
-  #   env_file: .docker-development-vars
-  #   depends_on:
-  #     - 'redis'
+      - 3000:3000
+    depends_on:
+      - postgresql
+  postgresql:
+    image: postgres:11-alpine
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust 
+    ports:
+      - '5433:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  webpacker:
+    <<: *base
+    command: ./bin/webpack-dev-server
+    ports:
+      - 3035:3035
 volumes:
-  bundle_cache:
-  node_cache:
+  postgres_data:
