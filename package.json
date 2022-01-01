@@ -2,9 +2,9 @@
   "name": "Contour",
   "private": true,
   "dependencies": {
-    "@rails/actioncable": "^6.0.0-alpha",
-    "@rails/activestorage": "^6.0.0-alpha",
-    "@rails/ujs": "^6.0.0-alpha",
+    "@rails/actioncable": "^7",
+    "@rails/activestorage": "^7",
+    "@rails/ujs": "^7",
     "@rails/webpacker": "^5.4.3",
     "bootstrap": "^4.3.1",
     "highcharts": "^7.2.2",
