@@ -1,6 +1,4 @@
-# docker build -t brandnewbox/bnb-ruby:2.6.6-postgresql -f 2.6/postgresql/Dockerfile .
-# docker push brandnewbox/bnb-ruby:2.6.6-postgresql
-FROM ruby:2.6.6-alpine3.13
+FROM ruby:2.7.5-alpine3.15
 
 # Location of the STI scripts inside the image
 LABEL io.openshift.s2i.scripts-url=image:///usr/libexec/s2i
