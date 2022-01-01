@@ -2,17 +2,20 @@
   "name": "Contour",
   "private": true,
   "dependencies": {
-    "@rails/actioncable": "^7",
-    "@rails/activestorage": "^7",
-    "@rails/ujs": "^7",
-    "@rails/webpacker": "^5.4.3",
-    "bootstrap": "^4.3.1",
+    "@hotwired/turbo-rails": "^7.0.1",
+    "@popperjs/core": "^2.10.2",
+    "bootstrap": "^5.1.1",
+    "esbuild": "^0.14.10",
+    "esbuild-rails": "^1.0.3",
     "highcharts": "^7.2.2",
+    "postcss": "^8.4.5",
     "rfs": "^9.0.1",
-    "turbolinks": "^5.2.0"
+    "sass": "^1.42.1"
+  },
+  "scripts": {
+    "build": "node esbuild.config.js",
+    "build:css": "sass ./app/assets/stylesheets/application.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules"
   },
   "version": "0.1.0",
-  "devDependencies": {
-    "webpack-dev-server": "^4.7.2"
-  }
+  "devDependencies": {}
 }

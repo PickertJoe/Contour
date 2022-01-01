@@ -14,8 +14,8 @@ Trestle.configure do |config|
     end
   # ...
   end
-  require 'trestle-devise/controller_methods'
-  Trestle::ApplicationController.send(:include, Trestle::Auth::ControllerMethods)
+  # require 'trestle-devise/controller_methods'
+  # Trestle::ApplicationController.send(:include, Trestle::Auth::ControllerMethods)
 
   # Specify a custom image to be used in place of the site title for mobile and
   # expanded/desktop navigation. These images should be placed within your
