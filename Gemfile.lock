@@ -91,6 +91,8 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    cssbundling-rails (1.0.0)
+      railties (>= 6.0.0)
     devise (4.8.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -272,6 +274,7 @@ DEPENDENCIES
   bootstrap
   byebug
   capybara (>= 2.15)
+  cssbundling-rails
   devise
   haml-rails
   highcharts-rails

@@ -31,5 +31,10 @@ services:
     command: yarn build --watch
     ports:
       - '3035:3035'
+  cssbuild:
+    <<: *base
+    command: yarn build:css --watch
+    ports:
+      - '3040:3040'
 volumes:
   postgres_data:

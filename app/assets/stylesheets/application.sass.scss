@@ -10,86 +10,86 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
 */
- @import 'bootstrap/scss/bootstrap';
- @import 'rfs/scss';
+@import 'bootstrap/scss/bootstrap';
 
 a:link{
-  color: black;
+ color: black;
 }
 
 body{
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), asset_url('Contour.jpg');
+//  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), asset_url('Contour.jpg');
+ background: black;
 }
 
 .body-link{
-  color: white;
+ color: white;
 }
 
 .btn-light{
-  font-size: 2.5em;
-  width: block;
+ font-size: 2.5em;
+ width: block;
 }
 
 .container{
-  align-items: center;
-  height: 100%;
-  justify-content: center;
+ align-items: center;
+ height: 100%;
+ justify-content: center;
 }
 
 #elevation_container{
-  height: 50vh;
+ height: 50vh;
 }
 
 #error_explanation{
-  background: white;
-  color: red;
+ background: white;
+ color: red;
 }
 
 .faq{
-  color: white;
+ color: white;
 }
 
 .home-banner{
- color: white;
- font-size: 2.5em;
- text-align: center;
- text-shadow: 2px 2px black;
+color: white;
+font-size: 2.5em;
+text-align: center;
+text-shadow: 2px 2px black;
 }
 
 img{
-  border: 1px solid #000000;
+ border: 1px solid #000000;
 }
 
 .index-link{
-  color: red;
+ color: red;
 }
 
 #map{
-  height: 80vh;
-  width: 100%;
+ height: 80vh;
+ width: 100%;
 }
 
 nav{
-  background: rgba(255,255,255,0.7);
+ background: rgba(255,255,255,0.7);
 }
 
 nav .navbar-nav li a{
-  color: black !important;
-  font-size: 1.4em;
-  }
+ color: black !important;
+ font-size: 1.4em;
+ }
 
 nav .navbar-brand{
-  color: black !important;
-  font-size: 2em;
+ color: black !important;
+ font-size: 2em;
 }
 
 .text-background{
-  background: rgba(255,255,255,0.7);
-  border: solid black 2px;
+ background: rgba(255,255,255,0.7);
+ border: solid black 2px;
 }
 
 .text-header{
-  color: white;
+ color: white;
 }
 
 
