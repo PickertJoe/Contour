@@ -67,16 +67,10 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
-    autoprefixer-rails (10.4.0.0)
-      execjs (~> 2)
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.9.3)
       msgpack (~> 1.0)
-    bootstrap (5.1.3)
-      autoprefixer-rails (>= 9.1.0)
-      popper_js (>= 2.9.3, < 3)
-      sassc-rails (>= 2.0.0)
     builder (3.2.4)
     byebug (11.1.3)
     capybara (3.36.0)
@@ -101,7 +95,6 @@ GEM
       warden (~> 1.2.3)
     erubi (1.10.0)
     erubis (2.7.0)
-    execjs (2.8.1)
     ffi (1.15.4)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -162,7 +155,6 @@ GEM
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.2.3)
-    popper_js (2.9.3)
     public_suffix (4.0.6)
     puma (4.3.10)
       nio4r (~> 2.0)
@@ -209,14 +201,6 @@ GEM
     ruby_parser (3.18.1)
       sexp_processor (~> 4.16)
     rubyzip (2.3.2)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     selenium-webdriver (4.1.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -226,7 +210,7 @@ GEM
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
-    sprockets (3.7.2)
+    sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.4.2)
@@ -271,7 +255,6 @@ PLATFORMS
 DEPENDENCIES
   active_storage_validations
   bootsnap (>= 1.4.2)
-  bootstrap
   byebug
   capybara (>= 2.15)
   cssbundling-rails
@@ -287,6 +270,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
+  sprockets-rails
   stripe
   trestle
   turbo-rails

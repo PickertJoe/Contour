@@ -9,8 +9,8 @@
     %link{:href => "https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css", :rel => "stylesheet"}/
     = csrf_meta_tags
     = csp_meta_tag
+    = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload'
     = favicon_link_tag 'Contour.jpg'
   %body
     %nav.navbar.navbar-expand-lg.navbar-light
